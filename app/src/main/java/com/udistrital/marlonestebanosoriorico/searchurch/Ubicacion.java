@@ -37,6 +37,7 @@ public class Ubicacion extends FragmentActivity implements OnMapReadyCallback {
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
+        Iglesia miIglesia;
         mMap = googleMap;
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         UiSettings uisettings= mMap.getUiSettings();
