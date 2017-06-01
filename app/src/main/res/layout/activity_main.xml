@@ -10,11 +10,33 @@
     android:paddingTop="15px"
     tools:context="com.udistrital.marlonestebanosoriorico.searchurch.MainActivity">
 
-    <Button
-        android:id="@+id/searchurch"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Searchurch :D"
-        tools:layout_editor_absoluteX="220dp"
-        tools:layout_editor_absoluteY="420dp" />
+        android:layout_marginBottom="300dp"
+        android:text="Bienvenido a SearChurch :D"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="80px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.23000002" />
+
+    <Button
+        android:id="@+id/searchurch"
+        android:layout_width="107dp"
+        android:layout_height="94dp"
+        android:text="Searchurch"
+        android:background="@mipmap/background_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintVertical_bias="0.78"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintLeft_creator="1" />
+
 </android.support.constraint.ConstraintLayout>
