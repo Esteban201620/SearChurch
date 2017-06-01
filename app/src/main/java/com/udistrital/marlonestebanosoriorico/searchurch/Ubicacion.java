@@ -8,13 +8,14 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class Ubicacion extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-
+    private GoogleMap mMap2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +24,7 @@ public class Ubicacion extends FragmentActivity implements OnMapReadyCallback {
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
     }
 
 
@@ -37,18 +39,24 @@ public class Ubicacion extends FragmentActivity implements OnMapReadyCallback {
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
+
         Iglesia miIglesia;
         mMap = googleMap;
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        UiSettings uisettings= mMap.getUiSettings();
-        uisettings.setZoomControlsEnabled(true);        // Add a marker in Sydney and move the camera
-        LatLng Bogota = new LatLng(4.6097100, -74.0817500);
-        float zoomlevel= 11;
+        mMap2 = googleMap;
+        mMap2.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        UiSettings uisettings= mMap2.getUiSettings();
+        uisettings.setZoomControlsEnabled(true);
 
-        for (int i = 0; i< Controlador.iglesias.size(); i++) {
-            mMap.addMarker(new MarkerOptions().position(Controlador.iglesias.get(i).posicion).title(Controlador.iglesias.get(i).nombre));
+        LatLng bogota = new LatLng(4.6097100, -74.0817500);
 
+        float zoomlevel=11;
+
+        for (int i = 0; i< Controlador.iglesias.size(); i++){
+            mMap2.addMarker(new MarkerOptions().position(Controlador.iglesias.get(i).posicion).title(Controlador.iglesias.get(i).nombre).icon(BitmapDescriptorFactory.defaultMarker((int)Math.random()*300
+            )));
         }
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Bogota,zoomlevel));
+
+        mMap2.moveCamera(CameraUpdateFactory.newLatLngZoom(bogota,zoomlevel));
     }
 }
