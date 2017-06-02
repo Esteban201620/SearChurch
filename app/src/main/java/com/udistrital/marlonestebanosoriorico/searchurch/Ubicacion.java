@@ -52,8 +52,8 @@ public class Ubicacion extends FragmentActivity implements OnMapReadyCallback {
 
         float zoomlevel=11;
 
-        for (int i = 0; i< Controlador.iglesias.size(); i++){
-            mMap2.addMarker(new MarkerOptions().position(Controlador.iglesias.get(i).posicion).title(Controlador.iglesias.get(i).nombre).icon(BitmapDescriptorFactory.defaultMarker((int)Math.random()*300
+        for (int i = 0; i< Banco.iglesias.size(); i++){
+            mMap2.addMarker(new MarkerOptions().position(Banco.iglesias.get(i).posicion).title(Banco.iglesias.get(i).nombre).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE
             )));
         }
 
